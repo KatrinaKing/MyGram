@@ -1,4 +1,5 @@
-﻿$("#MainContainer").append("<span>My Gram </span>");
+﻿// testing for github
+$("#MainContainer").append("<span>My Gram </span>");
 $("#MainContainer").append("<button>Log In </button>");
 $("#MainContainer").append("&nbsp;");
 $("#MainContainer").append("<button> Sign up</button>");
