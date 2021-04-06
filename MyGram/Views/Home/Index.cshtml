@@ -3,14 +3,37 @@
 }
 
 <div id="MainContainer" class="text-center">
-    <div id="logindiv" style="width:500px;height:250px;"></div>
+    
     <div>
         <button id="signup">Sign Up</button>
         <button id="login">Login</button>
 
     </div>
+    
+</div>
+<div id="logindiv" style="display:none">
+    <form action name="registration" novalidate="novalidate">
+
+        <span>
+            <label for="username">User Name</label>
+            <input type="text" id="usernameInput" placeholder="Add User Name here" required>
+        </span>
+        <br />
+        <br />
+        <br />
+        <span>
+            <label for="password">Password</label>
+            <input type="password" id="passwordInput" placeholder="Add Password here" required>
+        </span>
+        <br />
+        <br />
+        <br />
+        <span><button id="register">Register</button></span>
+
+    </form>
 
 </div>
 @section Scripts {
     <script src="~/js/Index.js"></script>
+    <link rel="stylesheet" href="~/css/index.css">
 }

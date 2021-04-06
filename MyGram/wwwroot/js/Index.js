@@ -18,11 +18,27 @@ $("#login").click(function () {
     alert("You have logged in");
 });
 
+
+$("#register").click(function () {
+    var username = $("#usernameInput").val();
+    var password = $("#passwordInput").val();
+
+
+    alert("User is: "+username+", and the Password is: "+password);
+});
+
+
 $("#signup").click(function () {
     
+    /*$("#logindiv").append("<br>");
+    $("#logindiv").append("<span>User <input type='text' placeholder='Add User Name here'></span>");
     $("#logindiv").append("<br>");
-    $("#logindiv").append("<span>User</span>");
+    $("#logindiv").append("<span>Password <input type='text' placeholder='Add password here'></span>");
     $("#logindiv").append("<br>");
-    $("#logindiv").append("<span>Password</span>");
     $("#logindiv").append("<br>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<span><button id='register'>Register</button></span>");*/
+
+    $("#logindiv").css("display", "block");
 });

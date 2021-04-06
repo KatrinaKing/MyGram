@@ -1,0 +1,9 @@
+﻿body {
+}
+
+#logindiv form span{
+    float:left;
+    height:auto;
+    margin:10px;
+    line-height:25px;
+}
