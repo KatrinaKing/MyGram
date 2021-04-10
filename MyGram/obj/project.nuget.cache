@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PYI3eagPa0/lcea/FYpRQvDd4sSdVEFb90s2mHAvr5pADPuBjzWHPbG6Cso0jD97XnNpxaZ0ObaQN6Bs0Flu6w==",
+  "dgSpecHash": "xTUQNmZoGCd+AyqTVlZ91iraoqH7sonJcb701o6S6vyMMb+wPthf7enTexV0bE9Y3c8EVQ/UDcXI9UNbRgFuAg==",
   "success": true,
   "projectFilePath": "/Users/kingkat/Desktop/Web 192 Project/MyGram/MyGram/MyGram.csproj",
   "expectedPackageFiles": [
+    "/Users/kingkat/.nuget/packages/jquery/1.4.4/jquery.1.4.4.nupkg.sha512",
+    "/Users/kingkat/.nuget/packages/jquery.validation/1.19.3/jquery.validation.1.19.3.nupkg.sha512",
     "/Users/kingkat/.nuget/packages/microsoft.aspnetcore.mvc.razor.extensions/3.1.12/microsoft.aspnetcore.mvc.razor.extensions.3.1.12.nupkg.sha512",
     "/Users/kingkat/.nuget/packages/microsoft.aspnetcore.mvc.razor.runtimecompilation/3.1.12/microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.12.nupkg.sha512",
     "/Users/kingkat/.nuget/packages/microsoft.aspnetcore.razor.language/3.1.12/microsoft.aspnetcore.razor.language.3.1.12.nupkg.sha512",

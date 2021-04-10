@@ -1,15 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<partial name="_ValidationScriptsPartial" />
 
 <div id="MainContainer" class="text-center">
-    
+
     <div>
         <button id="signup">Sign Up</button>
         <button id="login">Login</button>
 
     </div>
-    
+
 </div>
 <div id="logindiv" style="display:none">
     <form action name="registration" novalidate="novalidate">
@@ -35,5 +36,6 @@
 </div>
 @section Scripts {
     <script src="~/js/Index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <link rel="stylesheet" href="~/css/index.css">
 }

@@ -20,11 +20,28 @@ $("#login").click(function () {
 
 
 $("#register").click(function () {
-    var username = $("#usernameInput").val();
-    var password = $("#passwordInput").val();
-
-
-    alert("User is: "+username+", and the Password is: "+password);
+    $("form[name='registration']").validate({
+        rules: {
+            User: "required",
+            Password: {
+                required: true,
+                minlength: 5
+            }
+        },
+        messages: {
+            User: "Please enter your user name",
+            Password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+        },
+        submitHandler: function (form) {
+            alert("User is: " + $("#usernameInput").val() + ", and the Password is: " + $("#passwordInput").val());
+            //form.submit();
+        }
+    });
+  
+    
 });
 
 
