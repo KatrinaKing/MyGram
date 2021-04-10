@@ -36,8 +36,28 @@ $("#register").click(function () {
             },
         },
         submitHandler: function (form) {
-            alert("User is: " + $("#usernameInput").val() + ", and the Password is: " + $("#passwordInput").val());
-            //form.submit();
+            e.preventDefault();
+            $.when(
+                $.ajax({
+                    type: "POST",
+                    url: "/HomeController/validatesInfo",
+                    data: { username: $("#usernameInput").val(), password: ("#passwordInput").val() },
+                    success: function (response) {
+                        console.log(response);
+                    }
+                })).then(
+                    function (response) {
+                        if (response) {
+                            alert("User is: " + $("#usernameInput").val() + ", and the Password is: " + $("#passwordInput").val());
+
+                        } else {
+
+                            alert("error");
+                        }
+                    }
+            );
+
+            return false;
         }
     });
   

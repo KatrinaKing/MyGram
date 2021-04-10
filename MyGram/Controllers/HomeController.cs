@@ -33,5 +33,12 @@ namespace MyGram.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public Boolean validatesInfo(String username, String password) {
+            var validated = false;
+
+            return validated;
+        }
     }
 }
