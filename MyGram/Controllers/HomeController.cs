@@ -36,7 +36,7 @@ namespace MyGram.Controllers
 
         [HttpPost]
         public Boolean validatesInfo(String username, String password) {
-            var validated = false;
+            var validated = true;
 
             return validated;
         }

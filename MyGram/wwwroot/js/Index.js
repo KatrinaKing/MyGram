@@ -22,46 +22,46 @@ $("#login").click(function () {
 $("#register").click(function () {
     $("form[name='registration']").validate({
         rules: {
-            User: "required",
-            Password: {
+            UserInput: "required",
+            PasswordInput: {
                 required: true,
                 minlength: 5
             }
         },
         messages: {
-            User: "Please enter your user name",
-            Password: {
+            UserInput: "Please enter your user name",
+            PasswordInput: {
                 required: "Please provide a password",
                 minlength: "Your password must be at least 5 characters long"
             },
         },
         submitHandler: function (form) {
-            e.preventDefault();
             $.when(
                 $.ajax({
                     type: "POST",
-                    url: "/HomeController/validatesInfo",
-                    data: { username: $("#usernameInput").val(), password: ("#passwordInput").val() },
+                    url: "/Home/validatesInfo",
+                    data: {
+                        username: $("#UserInput").val()
+                        , password: $("#PasswordInput").val()
+                    },
                     success: function (response) {
-                        console.log(response);
+
+                    }, failure: function (response) {
+                        alert(response);
                     }
                 })).then(
                     function (response) {
                         if (response) {
-                            alert("User is: " + $("#usernameInput").val() + ", and the Password is: " + $("#passwordInput").val());
-
+                            alert("User has been registered");
                         } else {
 
                             alert("error");
                         }
                     }
-            );
-
-            return false;
+                );
         }
     });
-  
-    
+     
 });
 
 
