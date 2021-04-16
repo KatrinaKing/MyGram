@@ -35,10 +35,14 @@ namespace MyGram.Controllers
         }
 
         [HttpPost]
-        public Boolean validatesInfo(String username, String password) {
-            var validated = true;
+        public RegistrationData validatesInfo(String username, String password) {
+            
+            return new RegistrationData() {
+                UserName = username,
+                Password = password,
+                Message = "User has been registered successfully"
 
-            return validated;
+            };
         }
     }
 }

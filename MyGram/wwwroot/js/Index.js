@@ -40,6 +40,8 @@ $("#register").click(function () {
                 $.ajax({
                     type: "POST",
                     url: "/Home/validatesInfo",
+                    async: true,
+                    datatype: "json",
                     data: {
                         username: $("#UserInput").val()
                         , password: $("#PasswordInput").val()
@@ -50,13 +52,9 @@ $("#register").click(function () {
                         alert(response);
                     }
                 })).then(
-                    function (response) {
-                        if (response) {
-                            alert("User has been registered");
-                        } else {
-
-                            alert("error");
-                        }
+                    function (data) {
+                        console.log(data);
+                        alert(data.message);
                     }
                 );
         }
