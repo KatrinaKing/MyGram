@@ -1,18 +1,44 @@
 ﻿
-/*$("#MainContainer").append("<span>My Gram </span>");
-$("#MainContainer").append("<button>Log In </button>");
-$("#MainContainer").append("&nbsp;");
-$("#MainContainer").append("<button> Sign up</button>");
-*/
-$("#MainContainer").append("<br>");
-$("#MainContainer").append("<br>");
-$("#MainContainer").append("<span>Image 1 Image 2 Image 3 Image 4 Image 5</span>");
-$("#MainContainer").append("<br>");
-$("#MainContainer").append("<br>");
-$("#MainContainer").append("<span>About Blog Jobs Help </span>");
-$("#MainContainer").append("<br>");
-$("#MainContainer").append("<span>English 2021 MyGram </span>");
 
+init();
+
+
+function init() {
+    $.when(
+        $.ajax({
+            type: "GET",
+            url: "/Home/getImages",
+            async: true,
+            datatype: "json",
+            success: function (response) {
+       
+            }, failure: function (response) {
+                alert(response);
+            }
+        })).then(
+            function (data) {
+           
+                $("#MainContainer").append("<br>");
+                $("#MainContainer").append("<br>");
+                for (var i = 0; i < 4; i++) {
+                    $("#MainContainer").append("<span id='row"+i+"'></span>");
+
+                    for (var j = 0; j < 5; j++) {
+
+                        $("#row" + i).append("<span class='imagespan'>" + data[(5 * i) + j].descritpion+"</span>");
+
+                    }
+                    $("#MainContainer").append("<br>");
+                }
+                $("#MainContainer").append("<br>");
+                $("#MainContainer").append("<br>");
+                $("#MainContainer").append("<span>About Blog Jobs Help </span>");
+                $("#MainContainer").append("<br>");
+                $("#MainContainer").append("<span>English 2021 MyGram </span>");
+       
+            }
+        );
+}
 
 $("#login").click(function () {
     alert("You have logged in");

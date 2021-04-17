@@ -44,5 +44,19 @@ namespace MyGram.Controllers
 
             };
         }
+
+        [HttpGet]
+        public List<Image> getImages()
+        {
+            //int id, string imagepath, string imagealt, string description
+            var image = new Image(1, "imagepath","imagealt","description");
+            var listOfImages = new List<Image>();
+            for(var i = 1; i < 21; i++)
+            {
+                image = new Image(i, "imagepath" + i, "imagealt" + i, "Image " + i);
+                listOfImages.Add(image);
+            }
+            return listOfImages;
+        }
     }
 }
