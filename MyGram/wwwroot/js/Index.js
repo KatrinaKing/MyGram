@@ -54,7 +54,14 @@ $("#register").click(function () {
                 })).then(
                     function (data) {
                         console.log(data);
-                        alert(data.message);
+                        //alert(data.message);
+                        $.toast({
+                            heading: 'Success',
+                            text: data.message,
+                            icon: 'info',
+                            loader: true,
+                            bgColor: '#ff0066'
+                        })
                     }
                 );
         }
