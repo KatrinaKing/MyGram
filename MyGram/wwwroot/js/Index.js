@@ -62,7 +62,7 @@ $("#register").click(function () {
             },
         },
         submitHandler: function (form) {
-            $("#dialog").dialog("open");
+            $("#confirmRegistration").dialog("open");
         }
     });
 });
@@ -71,9 +71,36 @@ $("#register").click(function () {
 
 $("#dialog").dialog({
     autoOpen: false,
+    width: 750,
+    modal: true,
+    close: function () {
+        console.log("closed the form");
+    }
+});
+
+$("#signup").click(function () {
+    
+    /*$("#logindiv").append("<br>");
+    $("#logindiv").append("<span>User <input type='text' placeholder='Add User Name here'></span>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<span>Password <input type='text' placeholder='Add password here'></span>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<br>");
+    $("#logindiv").append("<span><button id='register'>Register</button></span>");*/
+
+    //$("#logindiv").css("display", "block");
+    $("#dialog").dialog("open");
+});
+
+
+$("#confirmRegistration").dialog({
+    autoOpen: false,
     modal: true,
     buttons: {
         "Ok": function () {
+
             $.when(
                 $.ajax({
                     type: "POST",
@@ -102,27 +129,12 @@ $("#dialog").dialog({
                         })
                     }
                 );
+               
         },
         Cancel: function () {
-            $("#dialog").dialog("close");
+            $("#confirmRegistration").dialog("close");
         }
     },
     close: function () {
         console.log("closed the form");
-    }
-});
-
-$("#signup").click(function () {
-    
-    /*$("#logindiv").append("<br>");
-    $("#logindiv").append("<span>User <input type='text' placeholder='Add User Name here'></span>");
-    $("#logindiv").append("<br>");
-    $("#logindiv").append("<span>Password <input type='text' placeholder='Add password here'></span>");
-    $("#logindiv").append("<br>");
-    $("#logindiv").append("<br>");
-    $("#logindiv").append("<br>");
-    $("#logindiv").append("<br>");
-    $("#logindiv").append("<span><button id='register'>Register</button></span>");*/
-
-    $("#logindiv").css("display", "block");
-});
+    }});
