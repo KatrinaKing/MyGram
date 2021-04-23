@@ -62,6 +62,18 @@ $("#register").click(function () {
             },
         },
         submitHandler: function (form) {
+            $("#dialog").dialog("open");
+        }
+    });
+});
+
+
+
+$("#dialog").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons: {
+        "Ok": function () {
             $.when(
                 $.ajax({
                     type: "POST",
@@ -90,11 +102,15 @@ $("#register").click(function () {
                         })
                     }
                 );
+        },
+        Cancel: function () {
+            $("#dialog").dialog("close");
         }
-    });
-     
+    },
+    close: function () {
+        console.log("closed the form");
+    }
 });
-
 
 $("#signup").click(function () {
     
