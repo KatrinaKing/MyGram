@@ -25,7 +25,10 @@ function init() {
 
                     for (var j = 0; j < 5; j++) {
 
-                        $("#row" + i).append("<span class='imagespan'>" + data[(5 * i) + j].descritpion+"</span>");
+                        $("#row" + i).append("<span class='imagespan clickable-image'>" + data[(5 * i) + j].descritpion + "</span>");
+                        
+
+                      
 
                     }
                     $("#MainContainer").append("<br>");
@@ -35,10 +38,21 @@ function init() {
                 $("#MainContainer").append("<span>About Blog Jobs Help </span>");
                 $("#MainContainer").append("<br>");
                 $("#MainContainer").append("<span>English 2021 MyGram </span>");
-       
+
+                $(".clickable-image").on("click", function (data) {
+                    $.toast({
+                        heading: "Liked",
+                        text: "You liked this Image",
+                        loader: true,
+                        bgColor: '#ff0066'
+                    });
+                });
+
             }
         );
 }
+
+
 
 $("#login").click(function () {
     alert("You have logged in");
@@ -92,7 +106,13 @@ $("#signup").click(function () {
 
     //$("#logindiv").css("display", "block");
     $("#dialog").dialog("open");
+
+  
+
 });
+
+dataTable = $("#MainCharacterTable").DataTable();
+
 
 
 $("#confirmRegistration").dialog({
